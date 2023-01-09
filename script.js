@@ -10,7 +10,14 @@ let userText = "";
 let errorCount = 0;
 let startTime;
 let questionText = "";
-
+// [
+//   "A quick brown fox jumps over the lazy dog.",
+//   "Good programmers write code that humans can understand.",
+//   "First, think about the problem. Then, write the code.",
+//   "There is no shortcut other than hard work.",
+//   "Perfection is achieved not when there is nothing more to add, but rather when there is nothing more to take away."
+  
+// ]
 // Load and display question
 fetch("./texts.json")
   .then((res) => res.json())
@@ -107,13 +114,13 @@ const start = () => {
   countdownOverlay.style.display = "flex";
 
   const startCountdown = setInterval(() => {
-    countdownOverlay.innerHTML = '<h1>${count}</h1>';
+    countdownOverlay.innerHTML =`<h1>${count}</h1>`;
 
     // finished timer
     if (count == 0) {
       // -------------- START TYPING -----------------
       document.addEventListener("keydown", typeController);
-      countdownOverlay.style.display = "flex";
+      countdownOverlay.style.display = "none";
       display.classList.remove("inactive");
 
       clearInterval(startCountdown);
