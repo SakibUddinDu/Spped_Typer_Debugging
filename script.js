@@ -4,6 +4,8 @@ const startBtn = document.getElementById("start");
 const countdownOverlay = document.getElementById("countdown");
 const resultModal = document.getElementById("result");
 const modalBackground = document.getElementById("modal-background");
+const span =document.getElementsByTagName("span")
+console.log(span.classList);
 
 // variables
 let userText = "";
@@ -26,6 +28,8 @@ fetch("./texts.json")
     question.innerHTML = questionText;
   });
 
+
+
 // checks the user typed character and displays accordingly
 const typeController = (e) => {
   const newLetter = e.key;
@@ -47,12 +51,15 @@ const typeController = (e) => {
 
   userText += newLetter;
 
-  const newLetterCorrect = validate(newLetter);
+  const newLetterCorrect = validate(newLetter);//return boolean
+
 
   if (newLetterCorrect) {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
   } else {
     display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
+    // const errorCount =display.innerHTML.length;
+    // console.log(errorCount)
   }
 
   // check if given question text is equal to user typed text
@@ -60,6 +67,8 @@ const typeController = (e) => {
     gameOver();
   }
 };
+
+
 
 const validate = (key) => {
   if (key === questionText[userText.length - 1]) {
@@ -101,6 +110,8 @@ const gameOver = () => {
   display.classList.add("inactive");
 };
 
+
+
 const closeModal = () => {
   modalBackground.classList.toggle("hidden");
   resultModal.classList.toggle("hidden");
@@ -139,7 +150,10 @@ displayHistory();
 // Show typing time spent
 setInterval(() => {
   const currentTime = new Date().getTime();
-  const timeSpent = (currentTime - startTime) / 1000;
+
+  const timeSpent = ((currentTime - startTime) / 1000).toFixed();
+  // const parsedTime=parseInt('timeSpent');
+  console.log(currentTime, timeSpent);
 
 
   document.getElementById("show-time").innerHTML = `${startTime ? timeSpent : 0} seconds`;

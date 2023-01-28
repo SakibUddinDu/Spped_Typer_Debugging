@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="blogs">
+      <div class="blog">
+        <h3>LocalStorage and SessionStorage</h3>
+        <p>
+          SessionStorage and LocalStorage are known as the web storage API. Data
+          can be stored on the client side by using these APIs.
+        </p>
+        <h4>SessionStorage:</h4>
+        <ul>
+          <li>SessionStorage is used for storing data on the client side.</li>
+          <li>Maximum limit of data saving in SessionStorage is about 5 MB</li>
+          <li>
+            Data in the SessionStorage exist till the current tab is open if we
+            close the current tab then our data will also erase automatically
+            from theSessionStorage.
+          </li>
+        </ul>
+
+        <p>
+          <b>Note:</b> If after closing the current tab we press ctrl+shift+T
+          for restoring that tab, then ideally in SessionStorage data should not
+          be there but we can see that SessionStorage is maintained in the
+          chrome, firefox but not in the safari browser while restoring the tab.
+          It is the browser dependent feature while restoring the tab.
+        </p>
+        <h4>LocalStorage:</h4>
+        <ul>
+          <li>
+            Like SessionStorage, LocalStorage also used for storing the data on
+            the client side.
+          </li>
+          <li>
+            Maximum limit of data saving is about 5 MB in LocalStorage also.
+          </li>
+          <li>
+            LocalStorage has no expiration time, Data in the LocalStorage
+            persist till the user manually delete it. This is the only
+            difference between LocalStorage and SessionStorage
+          </li>
+        </ul>
+      </div>
+      <div class="blog">
+        <h3>Scope in JavaScript</h3>
+        <p>
+          <strong>Scope: </strong>It is a region of the program where a variable
+          can be accessed. In other words, scope determines the
+          accessibility/visibility of a variable. Since JavaScript looks like a
+          C-family language, it is very obvious to think that scoping in
+          JavaScript is similar to that in most of the back-end programming
+          languages like C, C++, or Java.There’re 3 kinds of scopes in
+          JavaScript:
+        </p>
+        <ul>
+          <li style="text-align: justify">
+            <strong>Global scope</strong>: Variables declared outside of all
+            functions are known as global variables and in the
+            <i>global scope.</i> Global variables are accessible anywhere in the
+            program.
+          </li>
+          <li style="text-align: justify">
+            <strong>Function scope</strong>: Variables that are declared inside
+            a function are called local variables and in the
+            <i>function scope.</i> Local variables are accessible anywhere
+            inside the function. &nbsp;
+          </li>
+          <li style="text-align: justify">
+            <strong>Block scope: </strong>Variable that is declared inside a
+            specific block &amp; can’t be accessed outside of that block. In
+            order to access the variables of that specific block, we need to
+            create an object for it.
+          </li>
+        </ul>
+      </div>
+      <div class="blog">
+        <h3>What is Event loop?</h3>
+        <p>
+          The event loop is basically an endless loop, which keeps on checking
+          whether there is something to be executed in the call stack. If the
+          call stack is empty it checks the Event Queue, whether there is
+          something to move to the call stack. If there is a method present, it
+          moves it to the call stack and the method gets executed.
+        </p>
+      </div>
+      <div class="blog">
+        <h3> 8 ways to get Undefined</h3>
+        <p>
+          <ol>
+            <li> variable that is not initialized will give undefined </li>
+            <li>function with no return </li>  
+            <li> parameter that is not passed will be undefined</li>
+              <li> if return has nothing on the right side will return undefined</li>
+              <li>property that doesn't exists on an object will give you undefined</li> 
+              <li>accessing array elements outside of the index range </li>  
+              <li>deleting an element inside an array</li> 
+              <li>set a value directly to undefined</li>
+          </ol>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

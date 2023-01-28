@@ -19,6 +19,7 @@ body {
 #question {
   height: 100px;
   display: flex;
+  padding: 10px;
   align-items: center;
   justify-content: center;
   color: white;
@@ -148,7 +149,7 @@ button {
 }
 
 .card {
-  width: 30%;
+  width: 32%;
   height: 100%;
   padding: 50px;
   display: flex;
@@ -182,7 +183,7 @@ button {
   top: 0;
 }
 
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 1080px) {
   .box-container {
     padding: 0 20px;
     width: 100%;
